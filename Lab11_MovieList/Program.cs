@@ -34,7 +34,7 @@ namespace Lab11_MovieList
             bool go = true;
             Console.WriteLine('\n');
 
-            while (go)
+            do
             {
                 if (userChoice == "animated")
                 {
@@ -51,12 +51,14 @@ namespace Lab11_MovieList
 
                     if (yesNo == "yes" || yesNo == "y")
                     {
-                        continue;
+                        break;
                     }
                     else
                     {
                         go = false;
                     }
+                    continue;
+
                 }
                 else if (userChoice == "comedy")
                 {
@@ -68,6 +70,18 @@ namespace Lab11_MovieList
                             Console.WriteLine(movie.Title);
                         }
                     }
+                    Console.WriteLine("Choose another category? Enter [y]es to continue or any key to exit.");
+                    string yesNo = Console.ReadLine().ToLower();
+
+                    if (yesNo == "yes" || yesNo == "y")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        go = false;
+                    }
+                    break;
                 }
                 else if (userChoice == "scifi")
                 {
@@ -79,6 +93,18 @@ namespace Lab11_MovieList
                             Console.WriteLine(movie.Title);
                         }
                     }
+                    Console.WriteLine("Choose another category? Enter [y]es to continue or any key to exit.");
+                    string yesNo = Console.ReadLine().ToLower();
+
+                    if (yesNo == "yes" || yesNo == "y")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        go = false;
+                    }
+                    break;
                 }
                 else if (userChoice == "thriller")
                 {
@@ -90,6 +116,18 @@ namespace Lab11_MovieList
                             Console.WriteLine(movie.Title);
                         }
                     }
+                    Console.WriteLine("Choose another category? Enter [y]es to continue or any key to exit.");
+                    string yesNo = Console.ReadLine().ToLower();
+
+                    if (yesNo == "yes" || yesNo == "y")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        go = false;
+                    }
+                    break;
                 }
                 else
                 {
@@ -97,7 +135,7 @@ namespace Lab11_MovieList
                     userChoice = Console.ReadLine();
                     continue;
                 }
-            }
+            } while (go == true);
         }
     }
 }
